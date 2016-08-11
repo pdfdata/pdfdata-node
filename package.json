@@ -1,27 +1,35 @@
 {
-  "name": "pdfdata",
-  "version": "0.2.0",
-  "description": "node.js client library for PDFDATA.io (PDF data extraction as-a-service)",
-  "keywords": [
-      "pdf", "data", "text", "forms", "image", "extraction", "conversion", "api"
-  ],
-  "homepage": "https://github.com/pdfdata/pdfdata-node",
-  "author": "PDFDATA.io <help@pdfdata.io> (https://www.pdfdata.io)",
-  "contributors": [
-      "Chas Emerick <chas@pdfdata.io>"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:pdfdata/pdfdata-node.git"
-  },
-  "bugs:": "https://github.com/pdfdata/pdfdata-node/issues",
-  "engines": {
-    "node": ">= v0.12.0"
-  },
-  "main": "lib/pdfdata.js",
-  "dependencies": {
-      "request": "2.74.0",
-      "request-promise": "^4.1.1"
-  },
-  "license": "MIT",
+    "name": "pdfdata",
+    "version": "0.2.0",
+    "description": "node.js client library for PDFDATA.io (PDF data extraction as-a-service)",
+    "keywords": [
+	"pdf", "data", "text", "forms", "image", "extraction", "conversion", "api"
+    ],
+    "homepage": "https://github.com/pdfdata/pdfdata-node",
+    "author": "PDFDATA.io <help@pdfdata.io> (https://www.pdfdata.io)",
+    "contributors": [
+	"Chas Emerick <chas@pdfdata.io>"
+    ],
+    "repository": {
+	"type": "git",
+	"url": "git@github.com:pdfdata/pdfdata-node.git"
+    },
+    "bugs:": "https://github.com/pdfdata/pdfdata-node/issues",
+    "engines": {
+	"node": ">= v0.12.0"
+    },
+    "main": "lib/pdfdata.js",
+    "devDependencies": {
+	"chai": "~1.10.0",
+	"chai-as-promised": "~4.1.1",
+	"mocha": "~2.1.0"
+    },
+    "dependencies": {
+	"request": "2.74.0",
+	"request-promise": "^4.1.1"
+    },
+    "license": "MIT",
+    "scripts": {
+	"test": "mocha"
+    }
 }
