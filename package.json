@@ -25,6 +25,7 @@
 	"mocha": "~2.1.0"
     },
     "dependencies": {
+	"object-assign": "^4.1.0",
 	"request": "2.74.0",
 	"request-promise": "^4.1.1"
     },
