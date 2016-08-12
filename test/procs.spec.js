@@ -138,4 +138,25 @@ describe("procs", function () {
 		throw error;
 	    });
     });
+    
+    it("polling completion", function (done) {
+	base.pdfdata.procs.create({operations: [{op:"metadata"}, {op:"images"}],
+				   file: base.pdfs,
+				   wait: 0})
+	    .start()
+	    .then(function (result) {
+		assert.equal(result.status, "pending");
+		return base.pdfdata.procs.getCompleted(result.id, 30000, 1000);
+	    }).then(function (result) {
+		assert.equal(result.status, "complete");
+		assert.equal(result.documents.length, base.pdfs.length);
+		result.documents.forEach(function (doc) {
+		    assert.equal(doc.results.length, 2);
+		});
+		done();
+	    }).catch(function (error) {
+		console.log(error);
+		throw error;
+	    });
+    });
 });
