@@ -9,3 +9,17 @@ Coming soon! For now, go ahead and watch this repo so you know when
 
 Questions? We're on Twitter [@pdfdataio](https://twitter.com/pdfdataio), or you
 can [contact us](https://www.pdfdata.io/page/contact) otherwise.
+
+## Testing
+
+Set your environment, e.g.:
+
+```
+export PDFDATA_APIKEY=<YOUR API KEY>
+export PDFDATA_ENDPOINT=https://localhost:8081/v1
+```
+
+`PDFDATA_ENDPOINT` defaults to `https://api.pdfdata.io/v1`.
+
+Run the tests via `npm test`, or `node_modules/mocha/bin/mocha --watch` if you
+want to watch for changes while developing.
