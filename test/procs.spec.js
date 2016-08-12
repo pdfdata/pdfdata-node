@@ -44,6 +44,9 @@ describe("procs", function () {
 		assert.deepEqual(result, createResult);
 	    }).then(function (result) {
 		done();
+	    }).catch(function (error) {
+		console.log(error);
+		throw error;
 	    });
     }
 
@@ -59,6 +62,9 @@ describe("procs", function () {
 		oneproc({operations: [{op:"metadata"}],
 			 docid: [result[0].id]},
 			done);
+	    }).catch(function (error) {
+		console.log(error);
+		throw error;
 	    });
     });
 
@@ -68,6 +74,9 @@ describe("procs", function () {
 		oneproc({operations: [{op:"metadata"}],
 			 tag:["proc-test-by-tag"]},
 			done);
+	    }).catch(function (error) {
+		console.log(error);
+		throw error;
 	    });
     });
 
@@ -95,6 +104,9 @@ describe("procs", function () {
 		assert.deepEqual(result, createResult);
 	    }).then(function (result) {
 		done();
+	    }).catch(function (error) {
+		console.log(error);
+		throw error;
 	    });
     });
 
@@ -121,6 +133,9 @@ describe("procs", function () {
 		assert.deepEqual(result, createResult);
 	    }).then(function (result) {
 		done();
+	    }).catch(function (error) {
+		console.log(error);
+		throw error;
 	    });
     });
 });
