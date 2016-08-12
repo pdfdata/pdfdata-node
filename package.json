@@ -16,7 +16,7 @@
     },
     "bugs:": "https://github.com/pdfdata/pdfdata-node/issues",
     "engines": {
-	"node": ">= v0.12.0"
+	"node": ">= v0.10.0"
     },
     "main": "lib/pdfdata.js",
     "devDependencies": {
