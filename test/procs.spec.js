@@ -1,3 +1,5 @@
+"use strict";
+
 var base = require("./base.js");
 var utils = require("../lib/utils");
 
@@ -30,7 +32,7 @@ describe("procs", function () {
 			 mimetype: 'image/png'}}};
 
     function oneproc (config, done) {
-	var creationResult;
+	var createResult;
 	return base.pdfdata.procs.create(config).start()
 	    .then(function (result) {
 		createResult = result;
@@ -160,3 +162,4 @@ describe("procs", function () {
 	    });
     });
 });
+
