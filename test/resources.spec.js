@@ -32,28 +32,28 @@ describe("resources", function () {
             .withFiles(["pdfs/i14358.pdf"])
             .start()
             .then(function (result) {
-		result = result.documents[0].results[0];
-		assert.deepEqual(result, imageResult);
-		var resourceRequests = [];
-		for (var rsrc_id in result.resources) {
-		    resourceRequests.push(base.pdfdata.resources.byID(rsrc_id));
-		    resourceRequests.push(base.pdfdata.resources.byURL(result.resources[rsrc_id].url));
-		}
-		return Promise.all(resourceRequests);
+                result = result.documents[0].results[0];
+                assert.deepEqual(result, imageResult);
+                var resourceRequests = [];
+                for (var rsrc_id in result.resources) {
+                    resourceRequests.push(base.pdfdata.resources.byID(rsrc_id));
+                    resourceRequests.push(base.pdfdata.resources.byURL(result.resources[rsrc_id].url));
+                }
+                return Promise.all(resourceRequests);
             }).then(function (resources) {
-		resources.forEach(function (resp) {
-		    assert.equal(resp.headers['content-type'], 'image/png');
-		    assert.match(resp.headers["content-disposition"], /^attachment; filename=".+\.png"$/);
-		    assert.equal(resp.headers["content-length"], "96082");
-		    
-		    assert.instanceOf(resp.body, Buffer);
-		    assert.equal(resp.body.length, 96082);
+                resources.forEach(function (resp) {
+                    assert.equal(resp.headers['content-type'], 'image/png');
+                    assert.match(resp.headers["content-disposition"], /^attachment; filename=".+\.png"$/);
+                    assert.equal(resp.headers["content-length"], "96082");
+                    
+                    assert.instanceOf(resp.body, Buffer);
+                    assert.equal(resp.body.length, 96082);
 
-		    var dim = imagesize(resp.body);
-		    assert.equal(dim.height, 493);
-		    assert.equal(dim.width, 1392);
-		});
-		done();
+                    var dim = imagesize(resp.body);
+                    assert.equal(dim.height, 493);
+                    assert.equal(dim.width, 1392);
+                });
+                done();
             }).catch(function (error) {
                 console.log(error);
                 throw error;

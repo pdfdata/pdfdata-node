@@ -1,3 +1,5 @@
+"use strict";
+
 var assert = require('chai').assert;
 var path = require("path");
 var fs = require("fs");
@@ -26,6 +28,6 @@ function checkDate (datestr) {
 }
 
 module.exports = {pdfdata: pdfdata,
-		  isID: isID,
-		  checkDate: checkDate,
-		  pdfs: pdfs}
+                  isID: isID,
+                  checkDate: checkDate,
+                  pdfs: pdfs}
