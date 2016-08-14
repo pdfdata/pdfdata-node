@@ -1,4 +1,4 @@
-# pdfdata-node
+# pdfdata-node ![](https://travis-ci.org/pdfdata/pdfdata-node.svg?branch=master)
 
 A node.js client library for [PDFDATA.io](https://www.pdfdata.io) (PDF data
 extraction as-a-service)
