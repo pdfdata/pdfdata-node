@@ -37,7 +37,7 @@ pdfdata.procs.configure()
 
 This will yield something like this:
 
-```json
+```js
 { type: 'proc',
   id: 'proc_156870e759a',
   created: '2016-08-14T03:18:07Z',
