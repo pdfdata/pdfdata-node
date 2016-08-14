@@ -27,7 +27,7 @@ describe("resources", function () {
                          mimetype: 'image/png'}}};
 
     it("retrieval", function (done) {
-        base.pdfdata.procs.create()
+        base.pdfdata.procs.configure()
             .operation({op:"images"})
             .withFiles(["pdfs/i14358.pdf"])
             .start()
