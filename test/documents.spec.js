@@ -72,4 +72,6 @@ describe("document management", function () {
                 done();
             }).catch(console.log);
     });
+
+    it("listings")
 });
