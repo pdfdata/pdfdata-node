@@ -22,12 +22,6 @@ function isID (prefix, id) {
     assert.match(id, new RegExp("^" + prefix + "_" + "[\\da-f]+$"));
 }
 
-function checkDate (datestr) {
-    assert.equal(datestr.length, 20);
-    assert.instanceOf(new Date(datestr), Date);
-}
-
 module.exports = {pdfdata: pdfdata,
                   isID: isID,
-                  checkDate: checkDate,
                   pdfs: pdfs}

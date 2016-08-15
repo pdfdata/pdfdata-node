@@ -97,7 +97,7 @@ describe("procs", function () {
                 });
                 assert.include(results, metadataResult);
                 results.forEach(function (r) {
-                    base.checkDate(r.data.CreationDate);
+                    utils.checkDate(r.data.CreationDate);
                     assert.equal(r.op, "metadata");
                 });
                 return base.pdfdata.procs.get(result.id);

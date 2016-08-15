@@ -1,6 +1,7 @@
 "use strict";
 
 var base = require("./base.js");
+var utils = require("../lib/utils.js");
 
 var Promise = require("bluebird");
 var assert = require('chai').assert;
@@ -18,8 +19,8 @@ describe("document management", function () {
                 base.isID("doc", document.id);
                 assert.equal(document.type, "doc");
                 assert.equal(document.filename, path.basename(file))
-                base.checkDate(document.created);
-                base.checkDate(document.expires);
+                utils.checkDate(document.created);
+                utils.checkDate(document.expires);
                 return base.pdfdata.documents.get(document.id);
             })
             .then(function (result) {
@@ -46,8 +47,8 @@ describe("document management", function () {
                     base.isID("doc", document.id);
                     assert.equal(document.type, "doc");
                     assert.include(filenames, document.filename);
-                    base.checkDate(document.created);
-                    base.checkDate(document.expires);
+                    utils.checkDate(document.created);
+                    utils.checkDate(document.expires);
                     tags.forEach(function (tag) {
                         assert.include(document.tags, tag);
                     });
