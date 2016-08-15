@@ -7,7 +7,7 @@ var fs = require("fs");
 var apikey = process.env.PDFDATA_APIKEY;
 var endpoint = process.env.PDFDATA_ENDPOINT || "https://api.pdfdata.io/v1"
 
-assert.isDefined(apikey);
+assert.isDefined(apikey, "No PDFDATA_APIKEY environment variable set");
 
 console.log("Testing with endpoint: " + endpoint);
 
