@@ -11,7 +11,7 @@ assert.isDefined(apikey, "No PDFDATA_APIKEY environment variable set");
 var pdfdata = require("../lib/pdfdata")("abcd");
 assert.equal(pdfdata._api.auth.username, "abcd");
 
-var pdfdata = require("../lib/pdfdata")();
+pdfdata = require("../lib/pdfdata")();
 assert.equal(pdfdata._api.auth.username, apikey);
 
 console.log("Testing with endpoint: " + pdfdata.getEndpoint());
