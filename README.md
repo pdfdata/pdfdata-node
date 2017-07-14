@@ -1,7 +1,7 @@
 # pdfdata-node ![](https://travis-ci.org/pdfdata/pdfdata-node.svg?branch=master)
 
-A node.js client library for [PDFDATA.io](https://www.pdfdata.io) (PDF data
-extraction as-a-service)
+A node.js client library for [PDFDATA.io](https://www.pdfdata.io), the API for
+PDF data extraction.
 
 PDFDATA.io is designed to be incredibly easy to use while providing impeccable
 PDF data extraction quality over a range of configurable extraction targets
@@ -11,7 +11,7 @@ provides an idiomatic, promise-based JavaScript library that any node.js
 developer can have up and running in less than a minute.
 
 <strong>For detailed documentation and extensive examples, head over to our
-<a href="https://www.pdfdata.io/apidoc/">API docs</a>.</strong>
+[API docs](https://www.pdfdata.io/apidoc/).</strong>
 
 ## Quick Start
 
@@ -23,11 +23,39 @@ $ npm install pdfdata
 
 ### Usage
 
+You will need a PDFDATA.io API key to use this library. (If you don't have one
+already, you can get one free by
+[registering](https://www.pdfdata.io/register).)
+
+#### Credentials
+
+First, you'll need to plug in your PDFDATA.io API key; there are two ways you
+can do this. Either provide it as a constructor argument to the result of
+requiring the `pdfdata` module:
+
+```js
+var pdfdata = require("pdfdata")("test_YOUR_API_KEY_HERE");
+```
+
+Or, you can set the `PDFDATA_APIKEY` environment variable appropriately for your
+operating system, e.g.:
+
+```sh
+export PDFDATA_APIKEY=test_YOUR_API_KEY_HERE
+```
+
+and then omit the extra argument when requiring `pdfdata`:
+
+```js
+var pdfdata = require("pdfdata")();
+```
+
+#### Running a proc (data extraction process)
+
 Assuming you have a PDF document `test.pdf` in your current directory which
 contains text you'd like to extract:
 
 ```js
-var pdfdata = require("pdfdata")("test_YOUR_API_KEY_HERE");
 pdfdata.procs.configure()
     .operation({op:"text"})
     .withFiles(["test.pdf"])
@@ -56,6 +84,11 @@ This will yield something like this:
             [ { text: '\n                              Center        for    Bioinformatics                &\n                                     Molecular           Biostatistics\n                                   (University   of California, San  Francisco)\n\n                            Year 2005                                                     Paper dlbcl\n\n\n\n\n\n                          Microarray        Gene     Expression       Data     with\n                            Linked      Survival     Phenotypes:...' } ]
           } ] } ] }
 ```
+
+There are many different data extraction operations available; unstructured text
+as is shown above, as well as access to bitmap image data, metadata, and
+structured data options like forms, and custom named-region page template
+extractions.
 
 ### Learn more
 
