@@ -1,6 +1,6 @@
 {
   "name": "pdfdata",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "node.js client library for PDFDATA.io (PDF data extraction as-a-service)",
   "keywords": [
     "pdf",
